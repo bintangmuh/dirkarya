@@ -1,92 +1,48 @@
-<!DOCTYPE html>
-<html lang="en">
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
+@extends('layouts.master')
 
-        <title>Dir Karya</title>
+@section('content')
+  <header class="header header-filter" style="background-image: url('https://siakad2013.uny.ac.id/assets/photos/rektorat.JPG'); background-size:cover; height: 500px;">
+    <div class="container">
+      <div class="col-md-12 text-center" style="color: #fff; opacity: 100;">
+        <h1 class="title" style="color: #fff">Karyaku</h1>
+        <h4><i>Unggah Karya-karyamu</i></h4>
+        <p>Karyaku adalah tempat karya-karya mahasiswa UNY mempublikasikan karyanya sebagai bentuk portofolio.</p>
+        <a href="{{url('/login')}}" class="btn btn-lg btn-info">Login</a>
+        <p>atau</p>
+        <a href="/register" class="btn btn-primary btn-sm">Daftarkan Diri</a>
+      </div>
+    </div>
+  </header>
 
-        <!-- Fonts -->
-        <link href="https://fonts.googleapis.com/css?family=Raleway:100,600" rel="stylesheet" type="text/css">
+  <div class="main main-raised">
+    <div class="section section-basic">
+      <div class="container">
+        <h2 class="text-center title">Karya Masuk</h2>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
 
-        <!-- Styles -->
-        <style>
-            html, body {
-                background-color: #fff;
-                color: #636b6f;
-                font-family: 'Raleway', sans-serif;
-                font-weight: 100;
-                height: 100vh;
-                margin: 0;
-            }
-
-            .full-height {
-                height: 100vh;
-            }
-
-            .flex-center {
-                align-items: center;
-                display: flex;
-                justify-content: center;
-            }
-
-            .position-ref {
-                position: relative;
-            }
-
-            .top-right {
-                position: absolute;
-                right: 10px;
-                top: 18px;
-            }
-
-            .content {
-                text-align: center;
-            }
-
-            .title {
-                font-size: 84px;
-            }
-
-            .links > a {
-                color: #636b6f;
-                padding: 0 25px;
-                font-size: 12px;
-                font-weight: 600;
-                letter-spacing: .1rem;
-                text-decoration: none;
-                text-transform: uppercase;
-            }
-
-            .m-b-md {
-                margin-bottom: 30px;
-            }
-        </style>
-    </head>
-    <body>
-        <div class="flex-center position-ref full-height">
-            @if (Route::has('login'))
-                <div class="top-right links">
-                    <a href="{{ url('/login') }}">Login</a>
-                    <a href="{{ url('/register') }}">Register</a>
-                </div>
-            @endif
-
-            <div class="content">
-                <div class="title m-b-md">
-                    Laravel
-                </div>
-
-        
-                <div class="links">
-                    <a href="https://laravel.com/docs">Documentation</a>
-                    <a href="https://laracasts.com">Laracasts</a>
-                    <a href="https://laravel-news.com">News</a>
-                    <a href="https://forge.laravel.com">Forge</a>
-                    <a href="https://github.com/laravel/laravel">GitHub</a>
+        <div class="row">
+          @for ($i=0; $i < 4; $i++)
+            <div class="col-xs-6 col-sm-4">
+              <div class="karya-thumb card">
+                  <div class="col-sm-12">
+                    <div class="row">
+                      <a href="#" class="title">Judul Karya</a>
+                      <img src="http://www-static-blogs.operacdn.com/multi/wp-content/uploads/sites/2/2016/09/Opera-Mini-data-saving-apps.png" class="img-responsive">
+                    </div>
+                  </div>
+                  <div class="col-sm-12 footer">
+                    <img src="http://demos.creative-tim.com/material-kit/assets/img/avatar.jpg" class="profil img-circle" alt=""> Alexa Andriani
+                  </div>
                 </div>
             </div>
+          @endfor
         </div>
-    </body>
-</html>
+        <div class="row">
+          <div class="col-sm-12 text-center">
+            <a href="#" class="btn btn-primary">Lihat lebih banyak</a>
+          </div>
+        </div>
+      </div>
+      </div>
+  </div>
+@endsection

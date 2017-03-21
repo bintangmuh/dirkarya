@@ -1,0 +1,62 @@
+body {
+  background-color: #e6e6e6;
+}
+.karya-card {
+  margin-bottom :10px;
+}
+.karya-card .thumbs {
+  overflow: hidden;
+  display: block;
+  height: 210px;
+  text-align: center;
+}
+
+.karya-card .thumbs img {
+  height: 210px;
+  /*max-width: 100%;*/
+}
+
+.karya-card .thumbs:hover {
+  background-position: center;
+}
+
+.karya-thumb {
+  margin-bottom: 10px;
+}
+.karya-thumb .footer  {
+  padding: 10px;
+}
+
+.karya-thumb .footer .profil {
+  height: 25px;
+  width: 25px;
+}
+
+.karya-thumb .title {
+  display: block;
+  width: 100%;
+  position: absolute;
+  bottom: 0px;
+  left: 0px;
+  padding: 10px;
+  margin: 0px;
+  color: #fff;
+  text-decoration: none;
+  font-size: 11pt;
+  font-weight: normal;
+
+  background: rgba(255,255,255,0);
+  background: -moz-linear-gradient(top, rgba(255,255,255,0) 0%, rgba(0,0,0,0.48) 45%, rgba(0,0,0,0.67) 63%);
+  background: -webkit-gradient(left top, left bottom, color-stop(0%, rgba(255,255,255,0)), color-stop(45%, rgba(0,0,0,0.48)), color-stop(63%, rgba(0,0,0,0.67)));
+  background: -webkit-linear-gradient(top, rgba(255,255,255,0) 0%, rgba(0,0,0,0.48) 45%, rgba(0,0,0,0.67) 63%);
+  background: -o-linear-gradient(top, rgba(255,255,255,0) 0%, rgba(0,0,0,0.48) 45%, rgba(0,0,0,0.67) 63%);
+  background: -ms-linear-gradient(top, rgba(255,255,255,0) 0%, rgba(0,0,0,0.48) 45%, rgba(0,0,0,0.67) 63%);
+  background: linear-gradient(to bottom, rgba(255,255,255,0) 0%, rgba(0,0,0,0.48) 45%, rgba(0,0,0,0.67) 63%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#000000', GradientType=0 );
+}
+
+.img-profile {
+  width: 30px;
+  height: 30px;
+  margin-right: 5px;
+}
