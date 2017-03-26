@@ -10,9 +10,10 @@
 | to using a Closure or controller method. Build something great!
 |
 */
-
+use App\Karya as Karya;
 Route::get('/', function () {
-    return view('welcome');
+    $karyas = Karya::all();
+    return view('welcome', ['karyas' => $karyas]);
 });
 
 Auth::routes();

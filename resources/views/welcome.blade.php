@@ -21,21 +21,21 @@
         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
 
         <div class="row">
-          @for ($i=0; $i < 4; $i++)
+          @foreach ($karyas as $karya)
             <div class="col-xs-6 col-sm-4">
               <div class="karya-thumb card">
                   <div class="col-sm-12">
                     <div class="row">
-                      <a href="#" class="title">Judul Karya</a>
-                      <img src="http://www-static-blogs.operacdn.com/multi/wp-content/uploads/sites/2/2016/09/Opera-Mini-data-saving-apps.png" class="img-responsive">
+                      <a href="{{ route('karya', ['id' => $karya->id])}}" class="title">{{ $karya->nama }}</a>
+                      <img src="{{asset($karya->img_thumb)}}" class="img-responsive">
                     </div>
                   </div>
                   <div class="col-sm-12 footer">
-                    <img src="http://demos.creative-tim.com/material-kit/assets/img/avatar.jpg" class="profil img-circle" alt=""> Alexa Andriani
+                    <img src="http://demos.creative-tim.com/material-kit/assets/img/avatar.jpg" class="profil img-circle" alt=""> {{ $karya->user->name }}
                   </div>
                 </div>
             </div>
-          @endfor
+          @endforeach
         </div>
         <div class="row">
           <div class="col-sm-12 text-center">

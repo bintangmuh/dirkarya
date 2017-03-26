@@ -21,14 +21,14 @@
         <div class="card profile-card">
           <br>
           <div class="col-xs-4">
-            <img src="{{ asset('/img/christian.jpg')}}" class="img-rounded img-responsive" alt="">
+            <img src="{{ asset('/img/christian.jpg')}}" class="img-circle img-responsive" alt="">
           </div>
           <div class="col-xs-8">
             <h4 class="title">{{ $karya->user->name }}</h4>
             <p>
-              Pendidikan Teknik Informatika
-              <br>
-              14520241057</p>
+              <span>Pendidikan Teknik Informatika</span>
+              <span>14520241057</span>
+            </p>
           </div>
           <div class="col-sm-12">
             <a href="#" class="btn btn-info">Lihat Profil</a>

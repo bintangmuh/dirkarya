@@ -93,5 +93,7 @@
     <script src="{{asset('/js/jquery.min.js')}}"></script>
     <script src="{{asset('/js/material.min.js')}}"></script>
     <script src="{{asset('/js/material-kit.js')}}"></script>
+
+    @yield('js')
 </body>
 </html>
