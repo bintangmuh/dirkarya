@@ -1,6 +1,222 @@
-body {
-  background-color: #e6e6e6;
+@import url('https://fonts.googleapis.com/css?family=Noto+Serif');
+/*MDI icons */
+.mdi::before {
+    font-size: 24px;
+    line-height: 14px;
 }
+.btn .mdi::before {
+    position: relative;
+    top: 4px;
+}
+.btn-xs .mdi::before {
+    font-size: 18px;
+    top: 3px;
+}
+.btn-sm .mdi::before {
+    font-size: 18px;
+    top: 3px;
+}
+.dropdown-menu .mdi {
+    width: 18px;
+}
+.dropdown-menu .mdi::before {
+    position: relative;
+    top: 4px;
+    left: -8px;
+}
+.nav .mdi::before {
+    position: relative;
+    top: 4px;
+}
+.navbar .navbar-toggle .mdi::before {
+    position: relative;
+    top: 4px;
+    color: #FFF;
+}
+.breadcrumb .mdi::before {
+    position: relative;
+    top: 4px;
+}
+.breadcrumb a:hover {
+    text-decoration: none;
+}
+.breadcrumb a:hover span {
+    text-decoration: underline;
+}
+.alert .mdi::before {
+    position: relative;
+    top: 4px;
+    margin-right: 2px;
+}
+.input-group-addon .mdi::before {
+    position: relative;
+    top: 3px;
+}
+.navbar-brand .mdi::before {
+    position: relative;
+    top: 2px;
+    margin-right: 2px;
+}
+.list-group-item .mdi::before {
+    position: relative;
+    top: 3px;
+    left: -3px
+}
+/*MDI icons end*/
+
+/* Change Bootstrap */
+@media (max-width: 768px) {
+  .navbar-img {
+    height: 30px;
+    width: auto;
+    margin-top: -5  px;
+  }
+}
+
+.nav>li>a {
+    position: relative;
+    display: block;
+    padding: 0px 15px;
+    height: 60px;
+    font-size: 13pt;
+    line-height: 60px;
+}
+
+.nav-tabs>li>a {
+     margin-top: 0px;
+     /*padding: 0px ;*/
+     height: 45px;
+     font-size: 11pt;
+     line-height: 45px;
+    border-color: #e7e7e7;
+    color: #333333;
+    -webkit-transition: all .2s ease-in-out;
+    -o-transition: all .2s ease-in-out;
+    transition: all .2s ease-in-out;
+}
+
+.nav-tabs>li.active>a {
+  height: 50px;
+  margin-top: -5px !important;
+  color: rgb(23, 109, 145) !important;
+}
+
+
+
+h3 {
+  font-family: 'Noto Serif', serif;
+  font-weight: 700;
+}
+body {
+  background-color: none;
+}
+
+header.jumbo {
+  margin-top: -21px;
+  padding: 35px 0px;
+  background-image: url('../img/bg.png');
+  background-size: cover;
+  box-shadow: #bbbbbb 0px -6px 10px inset;
+}
+header.jumbo p {
+  font-size: 21px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.file-form {
+  background-color: #e7e7e7;
+  border-radius: 3px;
+  padding: 10px;
+  margin: 10px 0px;
+}
+.file-form input {
+  margin: 10px;
+}
+.navbar {
+  border-bottom: 0px;
+  box-shadow: 2px 2px 2px #e7e7e7;
+}
+.navbar-img {
+  height: 45px;
+  width: auto;
+  margin-top: -8px;
+}
+
+.panel-action-karya {
+  border-style: solid;
+  border-color: #D2D6DF;
+  border-width: 1px 0;
+  background-color: white;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  box-sizing: border-box;
+}
+
+.card.karya-view {
+  font-size: 12pt;
+  line-height: 1.5em;
+  border-radius: 5px;
+  overflow: hidden;
+}
+.card.karya-view h3 {
+  font-size: 20pt;
+}
+
+.card.karya-view .desc {
+  padding-top: 20px;
+}
+
+
+/*.dashboard-profile */
+
+.dashboard-profile .profile-image {
+  display: block;
+  text-align: center;
+  padding-top: 30px;
+  padding-bottom: 30px;
+}
+
+.dashboard-profile .profile-image img{
+    width: 60px;
+}
+
+
+.dashboard-profile .profile-info span {
+  display: block;
+  text-align: center;
+}
+.dashboard-profile .profile-info span.nama {
+  font-size: 14pt;
+  margin: 5px 0px;
+  font-weight: bold;
+}
+.dashboard-profile .card-footer {
+  margin-top: 10px;
+  display: flex;
+  height: 50px;
+}
+.dashboard-profile a {
+  border-top: 1px solid #e7e7e7;
+  display:inline-block;
+  width: 100%;
+  line-height: 50px;
+  text-align: center;
+  font-size: 15px;
+  text-decoration: none;
+  font-weight: lighter;
+}
+.card {
+    display: inline-block;
+    position: relative;
+    width: 100%;
+    border-radius: 3px;
+    color: rgba(0,0,0, 0.87);
+    background: #fff;
+    box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 3px 1px -2px rgba(0, 0, 0, 0.2), 0 1px 5px 0 rgba(0, 0, 0, 0.12);
+    margin-bottom: 20px;
+}
+
 .karya-card {
   margin-bottom :10px;
 }
@@ -9,6 +225,11 @@ body {
   display: block;
   height: 210px;
   text-align: center;
+}
+.karya-card .karya-desc {
+  height: 60px;
+  margin-bottom: 10px;
+  overflow: hidden;
 }
 
 .karya-card .thumbs img {
