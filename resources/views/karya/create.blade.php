@@ -17,6 +17,7 @@
                 </ul>
             </div>
         @endif
+        
         <div class="card">
           <form class="" action="{{route('postkaryabaru')}}" method="post" enctype="multipart/form-data">
             {{ csrf_field() }}

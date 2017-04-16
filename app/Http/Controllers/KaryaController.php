@@ -26,7 +26,7 @@ class KaryaController extends Controller
     $validator = Validator::make($request->all(), [
       'judul' => 'required|max:255',
       'deskripsi' => 'required',
-      'thumbs' => 'required',
+      'thumbs' => 'required|mimes:jpg,jpeg,png|image',
     ]);
 
     if ($validator->fails()) {
