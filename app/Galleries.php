@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Galleries extends Model
 {
-    protected $table = 'gallery';
+    protected $table = 'galleries';
 
     public function karya() {
       return $this->belongsTo('App\Karya', 'karya_id');
