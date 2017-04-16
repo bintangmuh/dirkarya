@@ -33,7 +33,7 @@ Route::get('/karya/{id}/edit', 'KaryaController@edit')->name('karyaeditview')->m
 Route::post('/karya/{id}/edit', 'KaryaController@postEdit')->name('karyaeditpost')->middleware('auth');
 
 Route::get('/karya/{id}/addimages', 'GalleryController@viewUploader')->name('addimage')->middleware('auth');
-Route::post('/karya/{id}/addimages', 'GalleryController@viewUploader')->name('addimagepost')->middleware('auth');
+Route::post('/karya/{id}/addimages', 'GalleryController@upload')->name('addimagepost')->middleware('auth');
 
 
 Route::get('/karya/{id}', 'KaryaController@show')->name('karya');
