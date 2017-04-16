@@ -29,7 +29,7 @@
                   </div>
                   <div class="col-sm-9">
                     <h3>{{ $karya->nama }}</h3>
-                    <small> By: <b>{{ $karya->user->name }}</b></small>
+                    <small> By: <a href="{{ route('profileUser', ['id' => $karya->user->id ])}}"><b>{{ $karya->user->name }}</a></b></small>
                     <div class="karya-desc">{!! $karya->deskripsi !!}</div>
                     <a href="{{route('karya', ['id' => $karya->id])}}" class="btn btn-primary">Lihat Selengkapnya</a>
                   </div>
