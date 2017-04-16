@@ -9,6 +9,16 @@ use App\User as User;
 
 class UserController extends Controller
 {
+    public function viewProfile() {
+      $user = User::find(Auth::user()->id);
+      return view('user.view', ['user' => $user]);
+    }
+
+    public function viewUserProfile($id) {
+      $user = User::findOrFail($id);
+      return view('user.view', ['user' => $user]);
+    }
+
     public function editViewProfile() {
       $user = User::findOrFail(Auth::user()->id);
 
