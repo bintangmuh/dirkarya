@@ -303,3 +303,18 @@ header.jumbo p {
   height: 30px;
   margin-right: 5px;
 }
+
+.gallery {
+  display: block;
+}
+
+.gallery li {
+  display: inline-block;
+  height: 300px;
+  list-style: none;
+  list-style-type: none;
+}
+.gallery li img {
+  height: 300px;
+  display: block;
+}

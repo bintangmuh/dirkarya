@@ -13,7 +13,7 @@ class Karya extends Model
     }
 
     public function images() {
-      return $this->hasMany('App/Gallery', 'karya_id', 'id');
+      return $this->hasMany('App\Galleries', 'karya_id', 'id');
     }
 
 }

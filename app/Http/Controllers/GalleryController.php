@@ -31,7 +31,7 @@ class GalleryController extends Controller
                 ->withInput();
       }
 
-      $filename = "gallery-karya-".$id."-".Carbon::now()->format('YmdHis').".".$request->file('imagegallery')->getClientOriginalExtension(); //save name of pictures
+      $filename = "/gallery-karya-".$id."-".Carbon::now()->format('YmdHis').".".$request->file('imagegallery')->getClientOriginalExtension(); //save name of pictures
       $path = $request->file('imagegallery')->storeAs('public', $filename); //store to public storage
 
       $gallery = new Galleries();
@@ -40,9 +40,16 @@ class GalleryController extends Controller
       $gallery->img_url = "storage" . $filename; //write on database
       $gallery->save();
 
-      return redirect()->route('karya', ['id' => $gallery->karya_id]);
+      return redirect()->back();
+      // return redirect()->route('karya', ['id' => $gallery->karya_id]);
 
     }
 
+    public function removeimage($postid, $id) {
+      $gallery = Galleries::findOrFail($id);
+      $gallery->delete();
+
+      return redirect()->back();
+    }
 
 }

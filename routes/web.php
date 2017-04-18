@@ -35,5 +35,7 @@ Route::post('/karya/{id}/edit', 'KaryaController@postEdit')->name('karyaeditpost
 Route::get('/karya/{id}/addimages', 'GalleryController@viewUploader')->name('addimage')->middleware('auth');
 Route::post('/karya/{id}/addimages', 'GalleryController@upload')->name('addimagepost')->middleware('auth');
 
+Route::get('/karya/{postid}/deleteimages/{id}', 'GalleryController@removeimage')->name('deleteimage')->middleware('auth');
+
 
 Route::get('/karya/{id}', 'KaryaController@show')->name('karya');

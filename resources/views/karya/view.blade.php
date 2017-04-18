@@ -17,6 +17,11 @@
           <div class="panel-action-karya col-sm-12">
             <a href="#" class="btn btn-primary">Kunjungi Karya</a>
           </div>
+          <ul class="gallery">
+            @foreach ($karya->images as $image)
+              <img src="{{ asset($image->img_url) }}" alt="" class="img-responsive" style="height: 300px; display: inline;">
+            @endforeach
+          </ul>
           <div class="col-sm-12 desc">
             <p>
               {!! html_entity_decode($karya->deskripsi) !!}
