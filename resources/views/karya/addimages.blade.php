@@ -1,8 +1,13 @@
 @extends('layouts.app')
 
+@section('title', 'File Upload')
 @section('content')
   <div class="container">
     <div class="col-sm-8">
+      <ol class="breadcrumb">
+        <li><a href="{{ route('karya', ['id' => $karya->id ])}}">{{ $karya->nama }}</a></li>
+        <li class="active">Tambah Gambar Gallery</li>
+      </ol>
       <h3>Gallery File Upload</h3>
       @if (count($errors) > 0)
           <div class="alert alert-danger fade in">
@@ -15,13 +20,21 @@
               </ul>
           </div>
       @endif
+
+      @if (session('success'))
+          <div class="alert alert-success fade in">
+              <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+              <h3 style="color: #fff; margin: 10px;">Berhasil</h3>
+              <p>{{ session('success')}}</p>
+          </div>
+      @endif
       <div class="card">
         <div class="col-sm-12">
           <form class="" action="{{ route('addimagepost', ['id' => $id]) }}" method="post" enctype="multipart/form-data">
             {{ csrf_field() }}
             <div class="form-group">
               <label for="imagegallery">Masukkan Gambar Disini</label>
-              <input type="file" id="imagegallery" name="imagegallery" value="">
+              <input type="file" id="imagegallery" name="imagegallery[]" multiple>
             </div>
             <div class="card">
               <img id="preview" src="" alt="" style="max-height: 300px">
@@ -55,9 +68,12 @@
   <script type="text/javascript">
     $('#preview').hide();
     function readURL(input) {
-      if (input.files && input.files[0]) {
+      if (input.files) {
         var reader = new FileReader();
         reader.onload = function(e) {
+          for (var i = 0; i < input.files.length; i++) {
+            console.log(input.files[i]);
+          }
           $('#preview').attr('src', e.target.result);
         }
 
@@ -66,7 +82,6 @@
     }
 
     $("#imagegallery").change(function() {
-      console.log(this);
       readURL(this);
       $('#preview').show('slow');
     });

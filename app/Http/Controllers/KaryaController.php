@@ -95,7 +95,7 @@ class KaryaController extends Controller
 
     $karya->save();
 
-    return redirect()->route('karyaeditview', ['id' => $karya->id]);
+    return redirect()->route('karyaeditview', ['id' => $karya->id])->with('success', 'Sunting Halaman telah berhasil dilakukan');
 
   }
 

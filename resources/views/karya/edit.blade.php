@@ -2,6 +2,10 @@
 
 @section('content')
   <div class="container">
+    <ol class="breadcrumb">
+      <li><a href="{{ route('karya', ['id' => $karya->id ])}}">{{ $karya->nama }}</a></li>
+      <li class="active">Edit Detail</li>
+    </ol>
     <h2>Sunting Karya "{{ $karya->nama }}"</h2>
     <div class="row">
       <div class="col-sm-8">
@@ -15,6 +19,14 @@
                         <li>{{ $error }}</li>
                     @endforeach
                 </ul>
+            </div>
+        @endif
+
+        @if (session('success'))
+            <div class="alert alert-success fade in">
+                <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+                <h3 style="color: #fff; margin: 10px;">Berhasil</h3>
+                <p>{{ session('success')}}</p>
             </div>
         @endif
         <div class="card">
