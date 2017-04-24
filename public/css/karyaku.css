@@ -306,6 +306,11 @@ header.jumbo p {
 
 .gallery {
   display: block;
+  padding: 0px;
+  width: 100%;
+  overflow-x: auto;
+  white-space: nowrap;
+
 }
 
 .gallery li {
@@ -313,6 +318,7 @@ header.jumbo p {
   height: 300px;
   list-style: none;
   list-style-type: none;
+  margin: 0 4px;
 }
 .gallery li img {
   height: 300px;
