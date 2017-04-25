@@ -14,7 +14,7 @@
     <link href="{{asset('/css/bootstrap.min.css')}}" rel="stylesheet">
     <link href="{{asset('/css/materialdesignicons.min.css')}}" rel="stylesheet">
     <link href="{{asset('/css/karyaku.css')}}" rel="stylesheet">
-
+    @stack('css')
     <!-- Scripts -->
     <script>
         window.Laravel = <?php echo json_encode([
