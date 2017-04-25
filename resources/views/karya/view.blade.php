@@ -1,6 +1,10 @@
 @extends('layouts.app')
 
 @section('title',  $karya->nama)
+
+@push('css')
+  <link rel="stylesheet" href="{{ asset('/css/jquery.fancybox.min.css') }}">
+@endpush
 @section('content')
   <div class="container">
     <div class="row">
@@ -29,7 +33,7 @@
           <ul class="col-sm-12 gallery">
             @foreach ($karya->images as $image)
               <li>
-                <img src="{{ asset($image->img_url) }}" alt="" class="img-responsive">
+                <a data-fancybox="gallery" href="{{ asset($image->img_url) }}"><img src="{{ asset($image->img_url) }}"></a>
               </li>
             @endforeach
           </ul>
@@ -43,3 +47,7 @@
     </div>
   </div>
 @endsection
+
+@push('js')
+  <script src="{{ asset('/js/jquery.fancybox.min.js') }}" charset="utf-8"></script>
+@endpush
