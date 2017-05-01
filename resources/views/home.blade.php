@@ -1,5 +1,7 @@
 @extends('layouts.app')
 
+@section('title', 'Beranda')
+
 @section('content')
 <div class="container">
     <div class="row">
@@ -10,13 +12,14 @@
             </div>
             <div class="profile-info">
               <span class="nama">{{ Auth::user()->name }}</span>
-              <span class="nim">14520241057</span>
-              <span class="prodi">Pendidikan Teknik Informatika</span>
+              <span class="nim">{{ Auth::user()->nim }}</span>
+              <span class="prodi">{{ Auth::user()->prodi }}</span>
             </div>
             <div class="card-footer">
-              <a href="#">Edit Profil</a>
+              <a href="{{ route('profileeditview') }}">Edit Profil</a>
             </div>
           </div>
+          <a href="{{ route('buatkaryabaru')}}" class="btn btn-block btn-primary"><i class="mdi mdi-file"></i> Buat Karya Baru</a>
         </div>
 
         <div class="col-sm-9">

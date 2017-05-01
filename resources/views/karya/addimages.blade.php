@@ -28,22 +28,38 @@
               <p>{{ session('success')}}</p>
           </div>
       @endif
-      <div class="card">
-        <div class="col-sm-12">
-          <form class="" action="{{ route('addimagepost', ['id' => $id]) }}" method="post" enctype="multipart/form-data">
-            {{ csrf_field() }}
-            <div class="form-group">
-              <label for="imagegallery">Masukkan Gambar Disini</label>
-              <input type="file" id="imagegallery" name="imagegallery[]" multiple>
-            </div>
-            <div class="card">
-              <img id="preview" src="" alt="" style="max-height: 300px">
-            </div>
-            <input type="submit" name="" value="Upload" class="btn btn-primary">
-          </form>
+        <div class="card">
+          <div class="col-sm-12">
+            <form class="" action="{{ route('addimagepost', ['id' => $id]) }}" method="post" enctype="multipart/form-data">
+              {{ csrf_field() }}
+              <div class="form-group">
+                <label for="imagegallery">Masukkan Gambar Disini</label>
+                <input type="file" id="imagegallery" name="imagegallery[]" multiple>
+              </div>
+              <div class="card">
+                <img id="preview" src="" alt="" style="max-height: 300px">
+              </div>
+              <div class="form-group">
+                <input type="submit" name="" value="Upload" class="btn btn-primary">
+              </div>
+            </form>
+          </div>
         </div>
-      </div>
-
+        <div class="card">
+          <div class="col-sm-12">
+            <h3>Tambah <i style="color: red" class="mdi mdi-youtube-play"></i> Youtube Video</h3>
+            <form class="" action="{{ route('videoembedpost', ['id' => $id])}}" method="post">
+              {{ csrf_field() }}
+              <div class="form-group">
+                <label for="video">Masukkan Video Disini</label>
+                <input type="text" class="form-control" id="video" name="video" placeholder="contoh URL: https://www.youtube.com/watch?v=FM7MFYoylVs">
+              </div>
+              <div class="form-group">
+                <button type="submit" class="btn btn-primary" name="button" value="Submit Video">Submit Video</button>
+              </div>
+            </form>
+          </div>
+        </div>
       <div class="card">
         <div class="col-sm-12">
           <h4 class="title">Gambar yang telah diupload</h4>
@@ -61,7 +77,9 @@
         </div>
       </div>
     </div>
+
   </div>
+
 @endsection
 
 @push('js')
@@ -85,5 +103,7 @@
       readURL(this);
       $('#preview').show('slow');
     });
+
+
   </script>
 @endpush

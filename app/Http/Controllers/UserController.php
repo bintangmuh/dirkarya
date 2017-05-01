@@ -21,7 +21,6 @@ class UserController extends Controller
 
     public function editViewProfile() {
       $user = User::findOrFail(Auth::user()->id);
-
       return view('user.edit', ['user' => $user]);
     }
 

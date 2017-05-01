@@ -28,7 +28,7 @@
                 <h3 style="color: #fff; margin: 10px;">Berhasil</h3>
                 <p>{{ session('success')}}</p>
             </div>
-        @endif
+        @endifU
         <div class="card">
           <form class="" action="{{route('karyaeditpost', ['id' => $karya->id ])}}" method="post" enctype="multipart/form-data">
             {{ csrf_field() }}

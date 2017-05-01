@@ -10,7 +10,7 @@
     <div class="row">
       @if (Auth::check())
         @if (Auth::user()->id === $karya->user->id)
-          <div class="col-sm-12" style="margin-bottom: 20px;">
+          <div class="col-sm-12 text-right" style="margin-bottom: 20px;">
               <a href="{{ route('karyaeditview', ['id' => $karya->id]) }}" class="btn btn-primary"><i class="mdi mdi-pencil"></i> Edit Page</a>
               <a href="{{ route('addimage', ['idlorem' => $karya->id]) }}" class="btn btn-primary"><i class="mdi mdi-image"></i> Tambah Gallery</a>
           </div>
@@ -31,6 +31,11 @@
             <a href="#" class="btn btn-primary">Kunjungi Karya</a>
           </div>
           <ul class="col-sm-12 gallery">
+            <li>
+              <a data-fancybox href="https://www.youtube.com/watch?v=_sI_Ps7JSEk">
+                <img src="{{ asset($karya->img_thumb) }}" alt="test">
+              </a>
+            </li>
             @foreach ($karya->images as $image)
               <li>
                 <a data-fancybox="gallery" href="{{ asset($image->img_url) }}"><img src="{{ asset($image->img_url) }}"></a>
