@@ -5,6 +5,19 @@
     <h2>Masukan Karya Baru</h2>
     <div class="row">
       <div class="col-sm-8">
+        {{-- if errors throw this --}}
+        @if (count($errors) > 0)
+            <div class="alert alert-danger fade in">
+                <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+                <h3 style="color: #fff; margin: 10px;">Error!</h3>
+                <ul>
+                    @foreach ($errors->all() as $error)
+                        <li>{{ $error }}</li>
+                    @endforeach
+                </ul>
+            </div>
+        @endif
+        
         <div class="card">
           <form class="" action="{{route('postkaryabaru')}}" method="post" enctype="multipart/form-data">
             {{ csrf_field() }}
@@ -12,13 +25,15 @@
               <h4 class="title">Data Karya</h4>
               <hr>
             </div>
+
+
             <div class="">
               <div class="col-sm-12">
     							<div class="form-group ">
-    								<div class="col-sm-2">
+    								<div class="col-sm-12">
                       <label class="control-label">Judul Karya</label>
     								</div>
-                    <div class="col-sm-10">
+                    <div class="col-sm-12">
                       <input type="text" class="form-control" name="judul" required>
                     </div>
     							</div>
@@ -26,22 +41,22 @@
 
               <div class="col-sm-12">
     							<div class="form-group ">
-    								<div class="col-sm-2">
+    								<div class="col-sm-12">
                       <label class="control-label">Deskripsi</label>
     								</div>
-                    <div class="col-sm-10">
-                      <textarea name="deskripsi" rows="8" cols="80" class="form-control" name="deskripsi" required></textarea>
+                    <div class="col-sm-12">
+                      <textarea name="deskripsi" rows="8" cols="80" class="form-control" name="deskripsi"></textarea>
                     </div>
     							</div>
     					</div>
 
               <div class="col-sm-12">
     							<div class="form-group ">
-    								<div class="col-sm-2">
+    								<div class="col-sm-12">
                       <label class="control-label">Thumbnail</label>
     								</div>
-                    <div class="col-sm-10">
-                      <label class="btn btn-default col-sm-12"><span class="mdi mdi-file-image"></span> Unggah Thumbnail Anda<input type="file" id="thumbsprevup" name="thumbs"></label>
+                    <div class="col-sm-12">
+                      <input type="file" id="thumbsprevup" name="thumbs">
                       <div class="card">
                         <img id="thumbspreview" src="#" alt="" class="img-responsive">
                       </div>
@@ -65,6 +80,9 @@
 @endsection
 
 @section('js')
+  <script src="{{ asset('/js/tinymce/tinymce.min.js') }}" charset="utf-8"></script>
+  <script>tinymce.init({ selector:'textarea' });</script>
+
   <script type="text/javascript">
     $('#thumbspreview').hide();
     function readURL(input) {

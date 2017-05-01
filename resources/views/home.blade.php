@@ -1,23 +1,28 @@
 @extends('layouts.app')
 
+@section('title', 'Beranda')
+
 @section('content')
 <div class="container">
     <div class="row">
-        <div class="col-sm-4">
-          <div class="card">
-            <div class="container-fluid">
-              <img src="" alt="">
+        <div class="col-sm-3">
+          <div class="card dashboard-profile">
+            <div class="profile-image">
+              <img src="{{ url('img/favicon.png') }}" class="img-square" alt="">
             </div>
-            <div class="col-sm-12">
-              <h3>Bintang Muhammad <small>14520241057</small></h3>
+            <div class="profile-info">
+              <span class="nama">{{ Auth::user()->name }}</span>
+              <span class="nim">{{ Auth::user()->nim }}</span>
+              <span class="prodi">{{ Auth::user()->prodi }}</span>
+            </div>
+            <div class="card-footer">
+              <a href="{{ route('profileeditview') }}">Edit Profil</a>
             </div>
           </div>
-          <a href="{{route('buatkaryabaru')}}" class="btn btn-info">
-            Karya Baru
-          </a>
+          <a href="{{ route('buatkaryabaru')}}" class="btn btn-block btn-primary"><i class="mdi mdi-file"></i> Buat Karya Baru</a>
         </div>
 
-        <div class="col-lg-8">
+        <div class="col-sm-9">
             @foreach ($karyas as $karya)
               <div class="karya-card card">
                   <div class="col-sm-3 thumbs">
@@ -27,9 +32,9 @@
                   </div>
                   <div class="col-sm-9">
                     <h3>{{ $karya->nama }}</h3>
-                    <small> By: <b>{{ $karya->user->name }}</b></small>
-                    <p>{{ $karya->deskripsi }}</p>
-                    <a href="{{route('karya', ['id' => $karya->id])}}" class="btn btn-info">Lihat Selengkapnya</a>
+                    <small> By: <a href="{{ route('profileUser', ['id' => $karya->user->id ])}}"><b>{{ $karya->user->name }}</a></b></small>
+                    <div class="karya-desc">{!! $karya->deskripsi !!}</div>
+                    <a href="{{route('karya', ['id' => $karya->id])}}" class="btn btn-primary">Lihat Selengkapnya</a>
                   </div>
               </div>
             @endforeach

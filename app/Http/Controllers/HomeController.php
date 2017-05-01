@@ -38,4 +38,8 @@ class HomeController extends Controller
     {
       return view('user.karya');
     }
+
+    public function profile() {
+      
+    }
 }

@@ -11,8 +11,7 @@
     <title>Karyaku - Direktori Karya Mahasiswa</title>
 
     <!-- Styles -->
-    <link href="{{asset('/css/app.css')}}" rel="stylesheet">
-    <link href="{{asset('/css/material-kit.css')}}" rel="stylesheet">
+    <link href="{{asset('/css/bootstrap.min.css')}}" rel="stylesheet">
     <link href="{{asset('/css/karyaku.css')}}" rel="stylesheet">
 
     <!-- Scripts -->
