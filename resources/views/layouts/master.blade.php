@@ -28,7 +28,6 @@
     <!-- Scripts -->
     <script src="{{asset('/js/app.js')}}"></script>
     <script src="{{asset('/js/jquery.min.js')}}"></script>
-    <script src="{{asset('/js/material.min.js')}}"></script>
-    <script src="{{asset('/js/material-kit.js')}}"></script>
+  @stack('js')
 </body>
 </html>

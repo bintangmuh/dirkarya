@@ -45,6 +45,24 @@
             </form>
           </div>
         </div>
+
+        <div class="card">
+          <div class="col-sm-12">
+            <h4 class="title">Gambar yang telah diupload</h4>
+          </div>
+          <div class="col-sm-12">
+            <ul class="gallery">
+              @foreach ($galleries as $gallery)
+                <li class="text-center">
+                  <img src="{{ asset($gallery->img_url) }}" alt="" class="img-responsive" style="height: 300px; display: inline;">
+                  <br>
+                  <a href="{{route('deleteimage', ['postid' => $gallery->karya_id, 'id' => $gallery->id])}}" class="btn btn-danger"><i class="mdi mdi-delete"></i>Delete</a>
+                </li>
+              @endforeach
+            </ul>
+          </div>
+        </div>
+
         <div class="card">
           <div class="col-sm-12">
             <h3>Tambah <i style="color: red" class="mdi mdi-youtube-play"></i> Youtube Video</h3>
@@ -58,24 +76,20 @@
                 <button type="submit" class="btn btn-primary" name="button" value="Submit Video">Submit Video</button>
               </div>
             </form>
+            <p>
+              <h4>List Video</h4>
+              <ul class="video-list">
+              @foreach ($karya->videos as $video)
+                <li>
+                  <a target="__blank" href="https://www.youtube.com/watch?v={{$video->youtube_url}}"><img src="https://img.youtube.com/vi/{{$video->youtube_url}}/default.jpg" alt=""></a>
+
+                  <a href="{{route('videodelete', ['id' => $gallery->karya_id, 'video' => $video->id])}}" class="btn btn-danger"><i class="mdi mdi-delete"></i></a>
+                </li>
+              @endforeach
+              </ul>
+            </p>
           </div>
         </div>
-      <div class="card">
-        <div class="col-sm-12">
-          <h4 class="title">Gambar yang telah diupload</h4>
-        </div>
-        <div class="col-sm-12">
-          <ul class="gallery">
-            @foreach ($galleries as $gallery)
-              <li class="text-center">
-                <img src="{{ asset($gallery->img_url) }}" alt="" class="img-responsive" style="height: 300px; display: inline;">
-                <br>
-                <a href="{{route('deleteimage', ['postid' => $gallery->karya_id, 'id' => $gallery->id])}}" class="btn btn-danger"><i class="mdi mdi-delete"></i>Delete</a>
-              </li>
-            @endforeach
-          </ul>
-        </div>
-      </div>
     </div>
 
   </div>

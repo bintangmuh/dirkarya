@@ -31,9 +31,10 @@ Route::post('/karya/new', 'KaryaController@postCreate')->name('postkaryabaru')->
 Route::get('/karya/{id}/edit', 'KaryaController@edit')->name('karyaeditview')->middleware('auth');
 Route::post('/karya/{id}/edit', 'KaryaController@postEdit')->name('karyaeditpost')->middleware('auth');
 
-Route::get('/karya/{id}/addimages', 'GalleryController@viewUploader')->name('addimage')->middleware('auth');
+Route::get('/karya/{id}/addimages', 'GalleryController@viewUploader')->name('addimage')->middleware('auth', 'can:update,id');
 Route::post('/karya/{id}/addimages', 'GalleryController@multiupload')->name('addimagepost')->middleware('auth');
 Route::post('/karya/{id}/addvideo', 'GalleryController@videoEmbed')->name('videoembedpost')->middleware('auth');
+Route::get('/karya/{id}/addvideo/{video}/delete', 'GalleryController@videoDelete')->name('videodelete')->middleware('auth', 'can:update,id');
 
 Route::get('/karya/{postid}/deleteimages/{id}', 'GalleryController@removeimage')->name('deleteimage')->middleware('auth');
 

@@ -324,3 +324,42 @@ header.jumbo p {
   height: 300px;
   display: block;
 }
+
+.video-list {
+  margin-left: 0px;
+  padding: 0px;
+  display: block;
+}
+
+.video-list li {
+  list-style: none;
+  display: inline-block;
+  margin: 0px 5px;
+  position: relative;
+}
+
+.video-list img {
+  list-style: none;
+  display: inline;
+  height: 200px;
+}
+
+.video-list li a.btn{
+  position: absolute;
+  right: 5px;
+  top: 5px;
+}
+
+.video-gallery-list {
+  position: relative;
+
+}
+
+.video-gallery-list a.btn{
+  position: absolute;
+  top: 30%;
+  right, left: auto;
+  width: 250px;
+
+
+}

@@ -17,7 +17,7 @@ class KaryaController extends Controller
 
   public function show($id)
   {
-    $karya = Karya::find($id);
+    $karya = Karya::findOrFail($id);
     return view('karya.view', ['karya' => $karya]);
   }
 
@@ -42,11 +42,9 @@ class KaryaController extends Controller
 
     // Get file input
     if (($request->hasFile('thumbs'))) {
-
       $filename = "karya-".Carbon::now()->format('YmdHis') .'.jpg'; //save name of pictures
       $path = $request->file('thumbs')->storeAs('public', $filename); //store to public storage
       $karya->img_thumb = "storage/" . $filename; //write on database
-
     } else { //if apps had'nt thumbs
       $karya->img_thumb = 'default.jpg';
     }
@@ -61,15 +59,15 @@ class KaryaController extends Controller
   {
     return view('karya.create');
   }
-  public function edit($id)
+  public function edit(Karya $id)
   {
-    $karya = Karya::findOrFail($id);
+    $this->authorize('update', $id);
+    $karya = $id;
     return view('karya.edit', ['karya' => $karya]);
   }
   public function postEdit($id, Request $request)
   {
     $karya = Karya::findOrFail($id);
-
     $validator = Validator::make($request->all(), [
       'judul' => 'required|max:255',
       'deskripsi' => 'required'
@@ -80,7 +78,6 @@ class KaryaController extends Controller
       ->withErrors($validator)
       ->withInput();
     }
-
     $karya->nama = $request->input('judul');
     $karya->deskripsi = $request->input('deskripsi');
 
@@ -92,11 +89,8 @@ class KaryaController extends Controller
       $karya->img_thumb = "storage/" . $filename; //write on database
 
     }
-
     $karya->save();
-
     return redirect()->route('karyaeditview', ['id' => $karya->id])->with('success', 'Sunting Halaman telah berhasil dilakukan');
-
   }
 
   public function delete($id)

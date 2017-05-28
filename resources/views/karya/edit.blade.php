@@ -1,5 +1,7 @@
 @extends('layouts.app')
 
+@section('title', 'Edit - ' . $karya->nama)
+
 @section('content')
   <div class="container">
     <ol class="breadcrumb">
@@ -28,7 +30,8 @@
                 <h3 style="color: #fff; margin: 10px;">Berhasil</h3>
                 <p>{{ session('success')}}</p>
             </div>
-        @endifU
+        @endif
+
         <div class="card">
           <form class="" action="{{route('karyaeditpost', ['id' => $karya->id ])}}" method="post" enctype="multipart/form-data">
             {{ csrf_field() }}

@@ -3,6 +3,7 @@
 namespace App\Policies;
 
 use App\User;
+use Auth;
 use App\Karya;
 use Illuminate\Auth\Access\HandlesAuthorization;
 
@@ -19,4 +20,13 @@ class KaryaPolicy
     {
         //
     }
+
+    public function update(User $user, Karya $karya) {
+      if ($user->id === $karya->user->id) {
+        return true;
+      } else {
+        return false;
+      }
+    }
+
 }

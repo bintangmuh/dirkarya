@@ -18,9 +18,7 @@
 
   <div class="col-sm-9 grid" style="padding: 0px;">
     <div class="row">
-      <div class="grid-sizer" style="width:45%">
-
-      </div>
+      <div class="grid-sizer" style="width:45%"></div>
       @foreach ($user->karya as $karya)
         <div class="card card-karya-grid">
           <img src="{{ asset($karya->img_thumb) }}" class="img-responsive" alt="">

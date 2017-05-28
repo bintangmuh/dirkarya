@@ -31,11 +31,15 @@
             <a href="#" class="btn btn-primary">Kunjungi Karya</a>
           </div>
           <ul class="col-sm-12 gallery">
-            <li>
-              <a data-fancybox href="https://www.youtube.com/watch?v=_sI_Ps7JSEk">
-                <img src="{{ asset($karya->img_thumb) }}" alt="test">
-              </a>
-            </li>
+            @foreach ($karya->videos as $video)
+              <li class="video-gallery-list">
+                <a data-fancybox href="https://www.youtube.com/watch?v={{$video->youtube_url}}">
+                  <img src="https://img.youtube.com/vi/{{$video->youtube_url}}/maxresdefault.jpg" alt="test">
+                  <a data-fancybox href="https://www.youtube.com/watch?v={{$video->youtube_url}}" class="btn btn-info btn-lg"><i class="mdi mdi-play-circle"></i> Video</a>
+                </a>
+              </li>
+            @endforeach
+
             @foreach ($karya->images as $image)
               <li>
                 <a data-fancybox="gallery" href="{{ asset($image->img_url) }}"><img src="{{ asset($image->img_url) }}"></a>
