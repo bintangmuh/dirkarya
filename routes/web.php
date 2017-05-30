@@ -38,5 +38,7 @@ Route::get('/karya/{id}/addvideo/{video}/delete', 'GalleryController@videoDelete
 
 Route::get('/karya/{postid}/deleteimages/{id}', 'GalleryController@removeimage')->name('deleteimage')->middleware('auth');
 
+Route::post('/search','SearchController@search')->name('search');
+Route::get('/search','SearchController@explore')->name('explore');
 
 Route::get('/karya/{id}', 'KaryaController@show')->name('karya');

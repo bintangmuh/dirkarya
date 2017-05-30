@@ -53,11 +53,10 @@
           <div class="col-sm-12">
             <ul class="gallery">
               @foreach ($galleries as $gallery)
-                <li class="text-center">
+                <div class="img-squared-gallery">
                   <img src="{{ asset($gallery->img_url) }}" alt="" class="img-responsive" style="height: 300px; display: inline;">
-                  <br>
-                  <a href="{{route('deleteimage', ['postid' => $gallery->karya_id, 'id' => $gallery->id])}}" class="btn btn-danger"><i class="mdi mdi-delete"></i>Delete</a>
-                </li>
+                  <a href="{{route('deleteimage', ['postid' => $gallery->karya_id, 'id' => $gallery->id])}}" class="btn btn-danger"><i class="mdi mdi-delete"></i></a>
+                </div>
               @endforeach
             </ul>
           </div>

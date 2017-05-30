@@ -309,7 +309,7 @@ header.jumbo p {
   padding: 0px;
   width: 100%;
   overflow-x: auto;
-  white-space: nowrap;
+  white-space: wrap;
 
 }
 
@@ -357,9 +357,30 @@ header.jumbo p {
 
 .video-gallery-list a.btn{
   position: absolute;
-  top: 30%;
-  right, left: auto;
+  top: 38%;
+  right: 26%;
+  margin: auto;
   width: 250px;
 
+}
 
+.img-squared-gallery {
+  position: relative;
+  padding: 3px;
+  border: 1px solid rgba(142, 142, 142, 0.54);
+  border-radius: 3px;
+  display: inline-block;
+  height: 200px;
+  width: 200px;
+  overflow: hidden;
+}
+.img-squared-gallery img {
+  /*height: auto;*/
+  width: 100%;
+}
+
+.img-squared-gallery a.btn {
+  position: absolute;
+  top: 3px;
+  right: 3px;
 }

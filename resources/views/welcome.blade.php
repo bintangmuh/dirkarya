@@ -19,6 +19,15 @@
     <div class="section section-basic">
       <div class="container">
         <h2 class="text-center title">Karya Mahasiswa</h2>
+        <form class="" action="{{ route('search') }}" method="post">
+          {{ csrf_field() }}
+          <div class="input-group col-sm-5">
+            <input class="form-control" type="text" name="search" value="" placeholder="Jelajahi Karya...">
+            <span class="input-group-btn">
+              <button class="btn btn-default" type="Submit">Cari</button>
+            </span>
+          </div>
+        </form>
         <hr>
 
         <div class="row">

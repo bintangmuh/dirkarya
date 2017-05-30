@@ -21,6 +21,7 @@
               <ul class="nav navbar-nav navbar-left">
                 <li><a href="{{ url('/home') }}"><span class="mdi mdi-home"></span> Home</a></li>
                 <li><a href="{{ url('/profile') }}"><i class="mdi mdi-account"></i> Profil</a></li>
+                <li><a href="{{ url('/search') }}"><i class="mdi mdi-earth"></i> Jelajah</a></li>
               </ul>
             @endif
             <!-- Right Side Of Navbar -->
